@@ -67,12 +67,16 @@ def main():
     )
 
     st.title("RedditAI")
-    prompt = st.text_input("Enter Reddit Post URL")
+    prompt = st.text_input(
+        "Reddit Post URL", placeholder="https://www.reddit.com/r/...")
+    button = st.button("Summarize")
 
-    if prompt:
+    if prompt and button:
         with st.spinner("Fetching comments and summarizing post..."):
             response = agent.run(prompt)
             st.markdown(response.content)
+    elif button:
+        st.info("Reddit post link pls 😑")
 
 
 if __name__ == "__main__":
