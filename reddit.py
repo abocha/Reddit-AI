@@ -1,10 +1,19 @@
 import praw
-import os
-from dotenv import load_dotenv
-load_dotenv()
 
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+# --- For CLI ---
+# import os
+# from dotenv import load_dotenv
+# load_dotenv()
+
+# CLIENT_ID = os.getenv("CLIENT_ID")
+# CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+# USER_AGENT = "ReddditAI:v0.1 (by u/TheCarBun)"
+# ----------------
+
+import streamlit as st
+
+CLIENT_ID = st.secrets["CLIENT_ID"]
+CLIENT_SECRET = st.secrets["CLIENT_SECRET"]
 USER_AGENT = "ReddditAI:v0.1 (by u/TheCarBun)"
 
 reddit = praw.Reddit(

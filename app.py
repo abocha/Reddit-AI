@@ -4,11 +4,12 @@ from agno.models.google import Gemini
 from reddit import get_post_comments
 from instructions import instructions
 
-import os
-from dotenv import load_dotenv
-load_dotenv()
+# --- For CLI ---
+# import os
+# from dotenv import load_dotenv
+# load_dotenv()
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # model = Gemini(
 #     id="gemini-1.5-flash",
@@ -36,6 +37,9 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 #     response = agent.run(prompt)
 #     print(response.content)
+# --- For CLI ---
+
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
 
 def main():
