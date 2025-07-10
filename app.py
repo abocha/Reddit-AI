@@ -44,7 +44,7 @@ GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
 def main():
     model = Gemini(
-        id="gemini-1.5-flash",
+        id="gemini-2.5-flash",
         api_key=GEMINI_API_KEY
     )
 
